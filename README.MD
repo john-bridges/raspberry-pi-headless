@@ -18,7 +18,7 @@ network={
 Mount the **system-boot** and **writable** volumes on your micro sd card. 
 
 #### system-boot volume file changes/additions
-Locate the ==network-config== file in the root of the system-boot volume, edit your file filling in the SSID and password, taking care to preserve the indentation in the yaml file.
+Locate the **network-config** file in the root of the system-boot volume, edit your file filling in the SSID and password, taking care to preserve the indentation in the yaml file.
 ```
 version: 2
 wifis:
@@ -29,8 +29,8 @@ wifis:
       "yourSSID":
         password: "yourPswd"
 ```
-Add an empty ==ssh== file
-Locate the ==user-data== file, at the bottom of the file add the following yaml config:
+Add an empty **ssh** file
+Locate the **user-data** file, at the bottom of the file add the following yaml config:
 ```
 power_state:
   mode: reboot
@@ -38,7 +38,7 @@ power_state:
  this will reboot the Pi when cloud-init completes
 
 #### writable volume file changes/additions
-Locate the ==wpa_supplicant== folder, it should be located in ==\etc== folder, ==\etc\wpa_supplicant==. Inside that folder create a ==wpa_supplicant.conf== file and add the following config:
+Locate the **wpa_supplicant** folder, it should be located in **\etc** folder. Inside that folder create a **wpa_supplicant.conf** file and add the following config:
 ```
 network={
  	ssid="Name of your wireless LAN"
